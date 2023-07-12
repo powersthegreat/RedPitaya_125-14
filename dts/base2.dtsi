@@ -1,0 +1,33 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			#address-cells = <0x01>;
+			#size-cells = <0x01>;
+			firmware-name = "base2.bit.bin";
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			#address-cells = <0x01>;
+			#size-cells = <0x01>;
+
+			avb@43c00000 {
+				compatible = "generic-uio";
+				reg = <0x43c00000 0x10000>;
+			};
+		};
+	};
+
+	__fixups__ {
+		fpga_full = "/fragment@0:target:0";
+		amba = "/fragment@1:target:0";
+	};
+};
