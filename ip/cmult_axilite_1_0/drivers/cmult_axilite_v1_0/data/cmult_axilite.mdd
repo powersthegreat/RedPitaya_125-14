@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER cmult_axilite
+	OPTION supported_peripherals = (cmult_axilite);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = cmult_axilite;
+END DRIVER
