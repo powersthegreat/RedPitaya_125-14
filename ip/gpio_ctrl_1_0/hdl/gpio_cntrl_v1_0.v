@@ -15,8 +15,8 @@
 	)
 	(
 		// Users to add ports here
-        output [7:0] led_o,
-        output [15:0] exp_io,
+        output wire [7:0] led_o,
+        output wire [15:0] exp_io,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -45,6 +45,8 @@
 		input wire  s00_axi_rready
 	);
 	
+    wire [C_S00_AXI_DATA_WIDTH-1:0] led_in_wire;
+    wire [C_S00_AXI_DATA_WIDTH-1:0] exp_in_wire;
 	wire [C_S00_AXI_DATA_WIDTH-1:0] led_out_wire;
 	wire [C_S00_AXI_DATA_WIDTH-1:0] exp_out_wire;
 	
@@ -81,7 +83,7 @@
 	// Add user logic here
     
     gpio_ctrl #(
-	    .DATA_WIDTH(32)
+        .DATA_WIDTH()
     ) gpio_ctrl_inst (
         .led_in(led_in_wire),
         .exp_in(exp_in_wire),
