@@ -81,7 +81,7 @@
 	// Add user logic here
     
     gpio_ctrl #(
-        .DATA_WIDTH()
+	    .DATA_WIDTH(32)
     ) gpio_ctrl_inst (
         .led_in(led_in_wire),
         .exp_in(exp_in_wire),
