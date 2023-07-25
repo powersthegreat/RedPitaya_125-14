@@ -27,7 +27,7 @@ module cmult #(
     
     always@(a, b) begin
         cr = ar*br - ai*bi;
-        ci = ar*br + ai*bi;
+        ci = ai*br + ar*bi;
     end
     
 endmodule
