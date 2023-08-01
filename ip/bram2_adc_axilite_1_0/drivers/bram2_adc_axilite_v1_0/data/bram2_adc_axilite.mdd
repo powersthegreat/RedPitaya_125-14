@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER bram2_adc_axilite
+	OPTION supported_peripherals = (bram2_adc_axilite);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = bram2_adc_axilite;
+END DRIVER
